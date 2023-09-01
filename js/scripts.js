@@ -20,6 +20,9 @@ let pokemonRepository = (function () {
     };
 })();
 
+pokemonList.forEach(function (pokemon) {
+    console.log(pokemon.name + ' is ' + pokemon.type + ' and is ' + pokemon.height + ' inches tall ');
+});
+
+// Updated loop code t0 access the pokemonList array that’s inside the IIFE
 console.log(pokemonRepository.getAll())
-
-
