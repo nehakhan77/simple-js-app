@@ -22,4 +22,8 @@ let pokemonRepository = (function () {
 
 console.log(pokemonRepository.getAll())
 
+pokemonRepository.getAll().forEach(function (pokemon) {
+    console.log(pokemon.name + ' is ' + pokemon.type + ' and is ' + pokemon.height + ' inches tall ');
+})
+
 
