@@ -1,27 +1,47 @@
 let pokemonRepository = (function () {
-
-    let pokemonList = [
+    let repository = [
         { name: "Bulbasaur", type: "grass", height: "7" },
         { name: "Charmander", type: "fire", height: "2" },
         { name: "Squirtle", type: "water", height: "12" }
     ];
 
     function add(pokemon) {
-        pokemonList.push(pokemon);
+        repository.push(pokemon);
     }
 
     function getAll() {
-        return pokemonList;
+        return repository;
+    }
+
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
+
+    //create a button for each Pokémon in the array
+    function addListitem(pokemon) {
+        let pokemonList = document.querySelector(".pokemon-list");
+        let listpokemon = document.createElement("li");
+        let button = document.createElement("button");
+        button.innerText = pokemon.name;
+        button.classList.add("button-class");
+        listpokemon.appendChild(button);
+        pokemonList.appendChild(listpokemon);
+        // adding an event listener for button
+        button.addEventListener('click', function (event) {
+            showDetails(pokemon);
+        });
     }
 
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListitem: addListitem,
+        showDetails: showDetails
     };
 })();
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-    console.log(pokemon.name + ' is ' + pokemon.type + ' and is ' + pokemon.height + ' inches tall ');
-})
+    pokemonRepository.addListitem(pokemon);
+});
 
 
