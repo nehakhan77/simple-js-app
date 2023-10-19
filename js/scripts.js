@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
-  let repository = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+  let repository = [];
 
   function add(pokemon) {
     repository.push(pokemon);
@@ -11,12 +11,20 @@ let pokemonRepository = (function () {
   }
 
   //create a button for each Pokémon in the array
-  function addListitem(item) {
+  function addListItem(item) {
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = item.name;
-    button.classList.add("button-class");
+    button.setAttribute("data-target", "#modal-container");
+    button.setAttribute("data-toggle", "modal");
+    button.classList.add("btn", "btn-primary", "btn-lg", "button-custom");
+    listItem.classList.add(
+      "list-group-item",
+      "row",
+      "bg-transparent",
+      "border-0"
+    );
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
     // adding an event listener for button
@@ -79,16 +87,16 @@ let pokemonRepository = (function () {
     modalTitle.empty();
     modalHeader.empty();
 
-    let nameElement = $("<h1>" + pokemon.name + "</h1>");
-    let imageElement = $('<img class="modal-img">');
-    imageElement.attr("src", pokemon.imageUrl);
-    let heightElement = $("<p>" + "HEIGHT : " + pokemon.height + "</p>");
-    let weightElement = $("<p>" + "WEIGHT : " + pokemon.weight + "</p>");
-    let typesElement = $(
-      "<p>" + "TYPES : " + pokemon.types.join(", ") + "</p>"
-    );
+    let nameElement = $("<h1>" + item.name + "</h1>");
+    let imageElementFront = $('<img class="modal-img" style="width:50%">');
+    imageElementFront.attr("src", item.imageURLFront);
+    let imageElementBack = $('<img class="modal-img" style="width:50%">');
+    imageElementBack.attr("src", item.imageURLBack);
+    let heightElement = $("<p>" + "HEIGHT : " + item.height + "</p>");
+    let weightElement = $("<p>" + "WEIGHT : " + item.weight + "</p>");
+    let typesElement = $("<p>" + "TYPES : " + item.types.join(", ") + "</p>");
     let abilitiesElement = $(
-      "<p>" + "ABILITIES : " + pokemon.abilities.join(", ") + "</p>"
+      "<p>" + "ABILITIES : " + item.abilities.join(", ") + "</p>"
     );
 
     typesElement.addClass("array-item");
@@ -109,6 +117,7 @@ let pokemonRepository = (function () {
     loadDetails: loadDetails,
     addListItem: addListItem,
     showDetails: showDetails,
+    showModal: showModal,
   };
 })();
 
