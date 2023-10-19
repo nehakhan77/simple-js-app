@@ -16,15 +16,10 @@ let pokemonRepository = (function () {
     let listpokemon = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = item.name;
+    button.classList.add("btn"); // bootstrap class
+    button.classList.add("btn-block");
     button.setAttribute("data-target", "#modal-container");
     button.setAttribute("data-toggle", "modal");
-    button.classList.add("btn", "btn-primary", "btn-lg", "button-custom");
-    listItem.classList.add(
-      "list-group-item",
-      "row",
-      "bg-transparent",
-      "border-0"
-    );
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
     // adding an event listener for button
@@ -63,7 +58,14 @@ let pokemonRepository = (function () {
         console.log(details);
         item.imageURL = details.sprites.front_default;
         item.height = details.height;
-        item.types = details.types;
+        item.types = [];
+        for (var i = 0; i < details.types.length; i++) {
+          item.types.push(details.types[i].type.name);
+        }
+        item.abilities = [];
+        for (var i = 0; i < details.abilities.length; i++) {
+          item.abilities.push(details.abilities[i].ability.name);
+        }
         return details;
       })
       .catch(function (e) {
@@ -84,10 +86,10 @@ let pokemonRepository = (function () {
     let modalHeader = $("modal-header");
 
     modalBody.empty();
-    modalTitle.empty();
     modalHeader.empty();
 
     let nameElement = $("<h1>" + item.name + "</h1>");
+    nameElement.innerText = item.name;
     let imageElementFront = $('<img class="modal-img" style="width:50%">');
     imageElementFront.attr("src", item.imageURLFront);
     let imageElementBack = $('<img class="modal-img" style="width:50%">');
@@ -103,7 +105,8 @@ let pokemonRepository = (function () {
     abilitiesElement.addClass("array-item");
 
     modalTitle.append(nameElement);
-    modalBody.append(imageElement);
+    modalBody.append(imageElementFront);
+    modalBody.append(imageElementBack);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
     modalBody.append(typesElement);
