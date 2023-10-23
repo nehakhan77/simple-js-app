@@ -5,30 +5,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Simple JS App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <!-- Main Title And List -->
-
-    <h1>POKEDEX</h1>
-<div class="list-group">
-    <ul style="list-style-type: none;" class="pokemon-list"></ul>
-</div>
-
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><img src="img/images/pokemonball.svg"> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>
+    <!-- navbar -->
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark">
+        <span class="navbar-brand">Pokédex <img src="img/pngimg.com - pokeball_PNG7.png" width= "50" height= "50" alt=""></span>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span role="button">
+                <i class="fa fa-search" aria-hidden="true" style="color: #ffffff;"></i>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <form class="form-inline ml-auto">
+                <input class="form-control mr-2 my-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light rounded-pill" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-</button>
+<div class="container">
+    <header class="container">
+        <ul style="list-style-type: none;" class="pokemon-list inline-flex justify-content-center flex-wrap"></ul>
+    </header>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
