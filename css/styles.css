@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-    margin-top: 4rem;
+    margin-top: 100px;
 }
 
 .list-group-item {
@@ -70,7 +70,9 @@ body {
     width: 50%;
 }
 
-
+.page-container {
+    margin-top: 500 px;
+}
 
  @media screen and (max-width: 420px) {
      .modal img {
