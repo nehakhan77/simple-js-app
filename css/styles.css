@@ -5,6 +5,9 @@
 body {
     background-color: white;
     background-image: url("../img/background.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     color: #fff;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -19,6 +22,16 @@ body {
     background-color: darkblue;
 }
 
+.page-container {
+    margin-top: 60px;
+    display: inline-flex;
+        flex-direction: column;
+        align-content: center;
+        margin-top: 10px;
+        width: 80vw;
+        min-height: 100vh;
+}
+
 .container {
     margin-top: 100px;
 }
@@ -27,51 +40,17 @@ body {
     background-color: white;
 }
 
-/* button-class styling */
-.button-class {
-    background-color: #FBCA3C;
-    color: #000;
-    padding: 16px 32px;
-    font-weight: 700;
-    /* transition */
-    transition: transform 0.3s;
-    transition-timing-function: ease-in-out;
-}
 
-.button-class:hover,
-.button-class:focus {
-    cursor: pointer;
-    transform: scale(1.1);
+/* Contains all buttons */
+.selectable-pokemon-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
 }
-
-.button-class:active,
-.button-class:active {
-    background-color: #fff;
-    border: 5px solid #FBCA3C;
-    color: #000;
-    /* transition */
-        transition: transform 0.3s;
-        transition-timing-function: ease-in-out;
-    }
 
 /* Modal styling */
 .modal {
     color: #000;
-}
-
-.modal-dialog {
-    margin-top: 15%;
-}
-
-.modal-img {
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-top: -20px;
-    width: 50%;
-}
-
-.page-container {
-    margin-top: 500 px;
 }
 
  @media screen and (max-width: 420px) {
