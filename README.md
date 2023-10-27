@@ -1,3 +1,1 @@
-#PokeDex App
-##Overview
-###Features
+
