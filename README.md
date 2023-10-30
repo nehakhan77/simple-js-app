@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-# PokeDex App
-
-## Overview
-
-### Features 
-
-#### Technologies Used
-=======
 # PokeDex App
 
 ## Overview
@@ -23,4 +14,3 @@ JavaScript
 Fetch API
 Bootstrap (for styling)
 
->>>>>>> f1bc0253e68ca23db2dff26380c9d05aa127bbde
