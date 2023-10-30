@@ -12,7 +12,7 @@ let pokemonRepository = (function () {
 
   //create a button for each Pokémon in the array
   function addListItem(item) {
-    let pokemonList = document.querySelector(".selectable-pokemon-list");
+    let pokemonList = document.querySelector(".list-group-item");
     let listpokemon = document.createElement("li");
     listpokemon.classList.add("list-group-item", "border-0");
     let button = document.createElement("button");

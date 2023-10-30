@@ -23,7 +23,6 @@ body {
 }
 
 .page-container {
-    margin-top: 60px;
     display: inline-flex;
         flex-direction: column;
         align-content: center;
@@ -33,20 +32,17 @@ body {
 }
 
 .container {
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .list-group-item {
     background-color: white;
-}
-
-
-/* Contains all buttons */
-.selectable-pokemon-list {
+    flex-direction: row;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: left;
+    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
 }
+
 
 /* Modal styling */
 .modal {

@@ -39,10 +39,29 @@ body {
     background-color: #fff
 }
 
-.selectable-pokemon-list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: left
+.button-class {
+    background-color: #FBCA3C;
+    color: #000;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-weight: 700;
+
+    /* transition */
+    transition: transform 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-class:hover,
+.button-class:focus {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.button-class:active,
+.button-class:active {
+    background-color: #fff;
+    border: 5px solid #FBCA3C;
+    color: #000;
 }
 
 .modal {
