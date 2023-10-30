@@ -6,7 +6,7 @@ let pokemonRepository = (function () {
   function n() {
     return t;
   }
-  function o(t) {
+  function i(t) {
     pokemonRepository.loadDetails(t).then(function () {
       console.log(t), pokemonRepository.showModal(t);
     });
@@ -52,42 +52,42 @@ let pokemonRepository = (function () {
         });
     },
     addListItem: function t(e) {
-      let n = document.querySelector(".selectable-pokemon-list"),
-        i = document.createElement("li");
-      i.classList.add("list-group-item", "border-0");
+      let n = document.querySelector(".list-group-item"),
+        o = document.createElement("li");
+      o.classList.add("list-group-item", "border-0");
       let a = document.createElement("button");
       (a.innerText = e.name),
         a.classList.add("btn"),
         a.classList.add("btn-block"),
-        a.classList.add("pokemon-button"),
+        a.classList.add("button-class"),
         a.setAttribute("data-target", "#modal-container"),
         a.setAttribute("data-toggle", "modal"),
-        i.appendChild(a),
-        n.appendChild(i),
+        o.appendChild(a),
+        n.appendChild(o),
         a.addEventListener("click", function (t) {
-          o(e);
+          i(e);
         });
     },
-    showDetails: o,
+    showDetails: i,
     showModal: function t(e) {
       let n = $(".modal-body");
       $(".modal-title");
-      let o = $(".modal-header");
-      n.empty(), o.empty();
-      let i = document.createElement("h1");
-      i.innerText = e.name;
+      let i = $(".modal-header");
+      n.empty(), i.empty();
+      let o = document.createElement("h1");
+      o.innerText = e.name;
       let a = $('<img class="modal-img" style="width:50%">');
       a.attr("src", e.imageURL);
       let l = $("<p>HEIGHT : " + e.height + "</p>"),
         s = $("<p>WEIGHT : " + e.weight + "</p>"),
-        p = $("<p>TYPES : " + e.types.join(", ") + "</p>"),
-        r = $("<p>ABILITIES : " + e.abilities.join(", ") + "</p>");
-      o.append(i),
+        r = $("<p>TYPES : " + e.types.join(", ") + "</p>"),
+        p = $("<p>ABILITIES : " + e.abilities.join(", ") + "</p>");
+      i.append(o),
         n.append(a),
         n.append(l),
         n.append(s),
-        n.append(p),
-        n.append(r);
+        n.append(r),
+        n.append(p);
     },
   };
 })();
