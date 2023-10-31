@@ -11,15 +11,22 @@ let pokemonRepository = (function () {
   }
 
   //create a button for each Pokémon in the array
-  function addListItem(item) {
+  function addListItem(item, index) {
     let pokemonList = document.querySelector(".list-group-item");
     let listpokemon = document.createElement("li");
-    listpokemon.classList.add("list-group-item", "border-0");
+    listpokemon.classList.add("list-group-item", "border-0", "text-center");
     let button = document.createElement("button");
-    button.innerText = item.name;
+    let image = document.createElement("img");
+    let title = document.createElement("p");
+    image.src =
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
+      index +
+      ".png";
+    title.innerText = item.name;
+    button.appendChild(image);
+    button.appendChild(title);
     button.classList.add("btn"); // bootstrap class
     button.classList.add("btn-block"); //bootstrap class
-    button.classList.add("button-class");
     button.setAttribute("data-target", "#modal-container");
     button.setAttribute("data-toggle", "modal");
     listpokemon.appendChild(button);
@@ -123,7 +130,7 @@ let pokemonRepository = (function () {
 
 // LOADS THE DATA:
 pokemonRepository.loadList().then(function () {
-  pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
+  pokemonRepository.getAll().forEach(function (pokemon, index) {
+    pokemonRepository.addListItem(pokemon, index + 1);
   });
 });

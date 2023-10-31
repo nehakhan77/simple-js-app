@@ -3,11 +3,7 @@
 }
 
 body {
-    background-color: white;
-    background-image: url("../img/background.jpeg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: lightgray;
     color: #fff;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -19,7 +15,7 @@ body {
 }
 
 .navbar {
-    background-color: darkblue;
+    background-color: green;
 }
 
 .page-container {
@@ -41,13 +37,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     -webkit-box-orient: vertical;
-}
+    border: var(--grid-border-color) 3px double;
+        background-color: var(--lighten-background-heavy);
+    }
 
-
-/* Modal styling */
-.modal {
-    color: #000;
-}
 
  @media screen and (max-width: 420px) {
      .modal img {

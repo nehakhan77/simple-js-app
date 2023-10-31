@@ -3,11 +3,7 @@
 }
 
 body {
-    background-color: #fff;
-    background-image: url("../img/background.jpeg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: #d3d3d3;
     color: #fff;
     font-family: Lato, sans-serif;
     font-weight: 400;
@@ -19,7 +15,7 @@ body {
 }
 
 .navbar {
-    background-color: #00008b
+    background-color: green
 }
 
 .page-container {
@@ -40,11 +36,9 @@ body {
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
-    -webkit-box-orient: vertical
-}
-
-.modal {
-    color: #000
+    -webkit-box-orient: vertical;
+    border: var(--grid-border-color) 3px double;
+    background-color: var(--lighten-background-heavy)
 }
 
 @media screen and (max-width:420px) {
@@ -60,3 +54,5 @@ body {
         max-height: 110px
     }
 }
+
+*{box-sizing:border-box}body{background-color:#d3d3d3;color:#fff;font-family:Lato,sans-serif;font-weight:400;font-size:16px;line-height:1.6;min-height:100vh;text-align:center;margin-top:35px}.navbar{background-color:green}.page-container{display:inline-flex;flex-direction:column;align-content:center;margin-top:10px;width:80vw;min-height:100vh}.container{margin-top:60px}.list-group-item{background-color:#fff;flex-direction:row;display:flex;flex-wrap:wrap;-webkit-box-orient:vertical;border:var(--grid-border-color) 3px double;background-color:var(--lighten-background-heavy)}@media screen and (max-width:420px){.modal img{max-width:170px;max-height:170px}}@media screen and (max-width:370px){.modal img{max-width:110px;max-height:110px}}

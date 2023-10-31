@@ -51,20 +51,27 @@ let pokemonRepository = (function () {
           console.error(t);
         });
     },
-    addListItem: function t(e) {
-      let n = document.querySelector(".list-group-item"),
-        o = document.createElement("li");
-      o.classList.add("list-group-item", "border-0");
-      let a = document.createElement("button");
-      (a.innerText = e.name),
-        a.classList.add("btn"),
-        a.classList.add("btn-block"),
-        a.classList.add("button-class"),
-        a.setAttribute("data-target", "#modal-container"),
-        a.setAttribute("data-toggle", "modal"),
+    addListItem: function t(e, n) {
+      let o = document.querySelector(".list-group-item"),
+        a = document.createElement("li");
+      a.classList.add("list-group-item", "border-0", "text-center");
+      let l = document.createElement("button"),
+        r = document.createElement("img"),
+        p = document.createElement("p");
+      (r.src =
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
+        n +
+        ".png"),
+        (p.innerText = e.name),
+        l.appendChild(r),
+        l.appendChild(p),
+        l.classList.add("btn"),
+        l.classList.add("btn-block"),
+        l.setAttribute("data-target", "#modal-container"),
+        l.setAttribute("data-toggle", "modal"),
+        a.appendChild(l),
         o.appendChild(a),
-        n.appendChild(o),
-        a.addEventListener("click", function (t) {
+        l.addEventListener("click", function (t) {
           i(e);
         });
     },
@@ -79,20 +86,20 @@ let pokemonRepository = (function () {
       let a = $('<img class="modal-img" style="width:50%">');
       a.attr("src", e.imageURL);
       let l = $("<p>HEIGHT : " + e.height + "</p>"),
-        s = $("<p>WEIGHT : " + e.weight + "</p>"),
-        r = $("<p>TYPES : " + e.types.join(", ") + "</p>"),
-        p = $("<p>ABILITIES : " + e.abilities.join(", ") + "</p>");
+        r = $("<p>WEIGHT : " + e.weight + "</p>"),
+        p = $("<p>TYPES : " + e.types.join(", ") + "</p>"),
+        s = $("<p>ABILITIES : " + e.abilities.join(", ") + "</p>");
       i.append(o),
         n.append(a),
         n.append(l),
-        n.append(s),
         n.append(r),
-        n.append(p);
+        n.append(p),
+        n.append(s);
     },
   };
 })();
 pokemonRepository.loadList().then(function () {
-  pokemonRepository.getAll().forEach(function (t) {
-    pokemonRepository.addListItem(t);
+  pokemonRepository.getAll().forEach(function (t, e) {
+    pokemonRepository.addListItem(t, e + 1);
   });
 });
