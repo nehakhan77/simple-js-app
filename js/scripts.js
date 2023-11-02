@@ -69,11 +69,11 @@ let pokemonRepository = (function () {
         item.height = details.height;
         item.weight = details.weight;
         item.types = [];
-        for (var i = 0; i < details.types.length; i++) {
+        for (var i = 1; i < details.types.length; i++) {
           item.types.push(details.types[i].type.name);
         }
         item.abilities = [];
-        for (var i = 0; i < details.abilities.length; i++) {
+        for (var i = 1; i < details.abilities.length; i++) {
           item.abilities.push(details.abilities[i].ability.name);
         }
         return details;
@@ -92,7 +92,6 @@ let pokemonRepository = (function () {
 
   function showModal(item) {
     let modalBody = $(".modal-body");
-    let modalTitle = $(".modal-title");
     let modalHeader = $(".modal-header");
 
     modalBody.empty();
